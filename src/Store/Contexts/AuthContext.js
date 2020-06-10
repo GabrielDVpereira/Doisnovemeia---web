@@ -7,7 +7,6 @@ export default function AuthContextProvider({ children }) {
   const [token, dispatch] = useReducer(authReducer, "");
   const history = useHistory();
 
-  console.log(token);
   useEffect(() => {
     const localStorageToken = localStorage.getItem("x-auth-token");
     if (localStorageToken) {
