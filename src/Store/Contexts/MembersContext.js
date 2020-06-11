@@ -20,6 +20,11 @@ export default function MembersContextProvider({ children }) {
       console.log(error);
     }
   }
+
+  const membersService = {
+    removeMember() {},
+    addMember() {},
+  };
   return (
     <MembersContext.Provider value={{ members }}>
       {children}
