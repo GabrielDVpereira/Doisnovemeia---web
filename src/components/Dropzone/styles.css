@@ -1,0 +1,60 @@
+.dropzone {
+  height: 50%;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.dropzone img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s;
+  z-index: 3;
+}
+.dropzone img:hover {
+  opacity: 0.8;
+  z-index: 1;
+}
+div .change-photo {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  font-family: Ubuntu;
+}
+.dropzone p {
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  border-radius: 10px;
+  border: 1px dashed #333;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 16px;
+}
+
+.dropzone p svg {
+  color: #6c6c80;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  .dropzone {
+    height: 30%;
+    width: 60%;
+  }
+}
