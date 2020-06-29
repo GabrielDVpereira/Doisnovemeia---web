@@ -9,15 +9,20 @@ export default function Members() {
   return (
     <div className="container">
       <Dropzone onFileUpload={setSelectedFile} />
-      {/* <form onSubmit={() => {}}>
+      <form onSubmit={() => {}}>
         <input type="text" placeholder="Nome" />
         <input type="text" placeholder="Email" />
         <input type="date" placeholder="Idade" />
         <button>Novo membro</button>
-      </form> */}
-      {members.map((member) => (
-        <p>{member.name}</p>
-      ))}
+      </form>
+      <div className="members">
+        {members.map((member) => (
+          <div className="member" key={member._id}>
+            <img src={member.photoUrl} alt="member" height="200px" />
+            <p>{member.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

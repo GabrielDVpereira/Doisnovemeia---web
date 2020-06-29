@@ -7,6 +7,7 @@ export const MembersContext = createContext();
 export default function MembersContextProvider({ children }) {
   const [members, setMembers] = useState([]);
   const { token } = useContext(AuthContext);
+  console.log(members);
 
   useEffect(() => {
     if (token) fetchMembers();
