@@ -7,12 +7,15 @@ export default function Members() {
   const { members } = useContext(MembersContext);
   const [selectedFile, setSelectedFile] = useState("");
   return (
-    <div className="container">
+    <div className="member-container">
       <Dropzone onFileUpload={setSelectedFile} />
       <form onSubmit={() => {}}>
-        <input type="text" placeholder="Nome" />
-        <input type="text" placeholder="Email" />
-        <input type="date" placeholder="Idade" />
+        <label>Nome do membro</label>
+        <input type="text" />
+
+        <label>Exposed do membro</label>
+        <textarea rows="5" />
+
         <button>Novo membro</button>
       </form>
       <div className="members">
