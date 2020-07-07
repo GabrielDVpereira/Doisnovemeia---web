@@ -7,7 +7,6 @@ export const MembersContext = createContext();
 export default function MembersContextProvider({ children }) {
   const [members, setMembers] = useState([]);
   const { token } = useContext(AuthContext);
-  console.log(members);
 
   useEffect(() => {
     if (token) fetchMembers();
@@ -23,11 +22,16 @@ export default function MembersContextProvider({ children }) {
   }
 
   const membersService = {
+    async addMember(memberInfo) {
+      const member = await api.post("/member", memberInfo);
+      console.log(member);
+      setMembers([member.data, ...members]);
+    },
     removeMember() {},
-    addMember() {},
+    editMember() {},
   };
   return (
-    <MembersContext.Provider value={{ members }}>
+    <MembersContext.Provider value={{ members, membersService }}>
       {children}
     </MembersContext.Provider>
   );

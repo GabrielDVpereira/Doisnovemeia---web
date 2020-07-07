@@ -11,7 +11,7 @@ export default function Dropzone({ onFileUpload }) {
       const file = acceptedFiles[0];
       const fileUrl = URL.createObjectURL(file);
       setFileUrl(fileUrl);
-      onFileUpload(fileUrl);
+      onFileUpload(file);
     },
     [onFileUpload]
   );

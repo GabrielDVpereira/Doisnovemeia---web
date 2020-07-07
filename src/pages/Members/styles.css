@@ -15,7 +15,26 @@ div .members {
 }
 
 div .member {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   margin: 10px;
   background-color: #fff;
+  align-items: center;
+}
+div .edit-member {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+div .member p {
+  margin-top: 10px;
+}
+
+div svg:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
