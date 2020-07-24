@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
 import { MembersContext } from "../../Store/Contexts/MembersContext";
 import Dropzone from "../../components/Dropzone";
-import { FaTrashAlt } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
+import MemberCard from "../../components/MemberCard";
 import { Ring } from "react-spinners-css";
 
 import "./styles.css";
@@ -52,18 +51,7 @@ export default function Members() {
       </form>
       <div className="members">
         {members.map((member) => (
-          <div className="member" key={member._id}>
-            <img src={member.photoUrl} alt="member" height="200px" />
-            <p>{member.name}</p>
-            <p>{member.exposed}</p>
-            <div className="edit-member" key={member._id}>
-              <FaTrashAlt
-                color="#9c0f0f"
-                onClick={() => console.log("remove member")}
-              />
-              <FaEdit onClick={() => console.log("edit member")} />
-            </div>
-          </div>
+          <MemberCard member={member} />
         ))}
       </div>
     </div>
